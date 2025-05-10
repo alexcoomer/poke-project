@@ -3,12 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\MoveType;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use File;
 use Illuminate\Database\Seeder;
 
 class MoveTypeSeeder extends Seeder
 {
     private MoveType $moveType;
+    private string $csvPath = 'database/data/move_types.csv';
 
     public function __construct(MoveType $moveType)
     {
@@ -20,6 +21,19 @@ class MoveTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        // TODO: Parse data from CSV
+        $csvFullPath = base_path($this->csvPath);
+        
+        if(File::exists($csvFullPath)) {
+            $csvData = array_map('str_getcsv', file($csvFullPath));
+            
+            //Skip header row
+            array_shift($csvData);
+
+            foreach($csvData as $row) {
+                $this->moveType->create([
+                    'name' => $row[1],
+                ]);
+            }
+        }
     }
 }

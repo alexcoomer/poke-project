@@ -3,12 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\StatusCondition;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use File;
 use Illuminate\Database\Seeder;
 
 class StatusConditionSeeder extends Seeder
 {
     private StatusCondition $statusCondition;
+    private string $csvPath = 'database/data/status_conditions.csv';
 
     public function __construct(StatusCondition $statusCondition)
     {
@@ -20,41 +21,20 @@ class StatusConditionSeeder extends Seeder
      */
     public function run(): void
     {
-        // TODO: Complete the list of Status Conditions with Volatile Status Conditions
-        $statusConditions = [
-            [
-                'name' => 'Paralysis',
-                'abbreviation' => 'PAR'
-            ],
-            [
-                'name' => 'Poison',
-                'abbreviation' => 'PSN'
-            ],
-            [
-                'name' => 'Badly Poisoned',
-                'abbreviation' => 'TOX'
-            ],
-            [
-                'name' => 'Sleep',
-                'abbreviation' => 'SLP'
-            ],
-            [
-                'name' => 'Burn',
-                'abbreviation' => 'BRN'
-            ],
-            [
-                'name' => 'Freeze',
-                'abbreviation' => 'FRZ'
-            ],
-            [
-                'name' => 'Fainted',
-                'abbreviation' => 'KO'
-            ]
-        ];
+        $csvFullPath = base_path($this->csvPath);
+        
+        if(File::exists($csvFullPath)) {
+            $csvData = array_map('str_getcsv', file($csvFullPath));
+            
+            //Skip header row
+            array_shift($csvData);
 
-        foreach ($statusConditions as $statusCondition)
-        {
-            $this->statusCondition->create($statusCondition);
+            foreach($csvData as $row) {
+                $this->statusCondition->create([
+                    'name' => $row[1],
+                    'abbreviation' => $row[2]
+                ]);
+            }
         }
     }
 }

@@ -3,12 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Type;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use File;
 use Illuminate\Database\Seeder;
 
 class TypeSeeder extends Seeder
 {
     private Type $type;
+    private string $csvPath = 'database/data/types.csv';
 
     public function __construct(Type $type)
     {
@@ -20,66 +21,21 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        $types = [
-            [
-                'name' => 'normal'
-            ],
-            [
-                'name' => 'fighting'
-            ],
-            [
-                'name' => 'flying'
-            ],
-            [
-                'name' => 'poison'
-            ],
-            [
-                'name' => 'ground'
-            ],
-            [
-                'name' => 'rock'
-            ],
-            [
-                'name' => 'bug'
-            ],
-            [
-                'name' => 'Poison'
-            ],
-            [
-                'name' => 'Ground'
-            ],
-            [
-                'name' => 'Flying'
-            ],
-            [
-                'name' => 'Psychic'
-            ],
-            [
-                'name' => 'Bug'
-            ],
-            [
-                'name' => 'Rock'
-            ],
-            [
-                'name' => 'Ghost'
-            ],
-            [
-                'name' => 'Dragon'
-            ],
-            [
-                'name' => 'Dark'
-            ],
-            [
-                'name' => 'Steel'
-            ],
-            [
-                'name' => 'Fairy'
-            ],
-        ];
+        $csvFullPath = base_path($this->csvPath);
+        
+        if(File::exists($csvFullPath)) {
+            $csvData = array_map('str_getcsv', file($csvFullPath));
+            
+            //Skip header row
+            array_shift($csvData);
 
-        foreach ($types as $type)
-        {
-            $this->type->create($type);
+            foreach($csvData as $row) {
+                $this->type->create([
+                    'name' => $row[1],
+                    'generation_introduced' => $row[2],
+                    'earlygen_movetype' => $row[3]
+                ]);
+            }
         }
     }
 }

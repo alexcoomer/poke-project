@@ -3,12 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\StatType;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use File;
 use Illuminate\Database\Seeder;
 
 class StatTypeSeeder extends Seeder
 {
     private StatType $statType;
+    private string $csvPath = 'database/data/stat_types.csv';
 
     public function __construct(StatType $statType)
     {
@@ -20,36 +21,20 @@ class StatTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        $statTypes = [
-            [
-                'name' => 'Hit Points',
-                'abbreviation' => 'HP'
-            ],
-            [
-                'name' => 'Attack',
-                'abbreviation' => 'ATK'
-            ],
-            [
-                'name' => 'Defence',
-                'abbreviation' => 'DEF'
-            ],
-            [
-                'name' => 'Special Attack',
-                'abbreviation' => 'SP ATK'
-            ],
-            [
-                'name' => 'Special Defence',
-                'abbreviation' => 'SP DEF'
-            ],
-            [
-                'name' => 'Speed',
-                'abbreviation' => 'SPE'
-            ],
-        ];
+        $csvFullPath = base_path($this->csvPath);
+        
+        if(File::exists($csvFullPath)) {
+            $csvData = array_map('str_getcsv', file($csvFullPath));
+            
+            //Skip header row
+            array_shift($csvData);
 
-        foreach ($statTypes as $statType)
-        {
-            $this->statType->create($statType);
+            foreach($csvData as $row) {
+                $this->statType->create([
+                    'name' => $row[1],
+                    'abbreviation' => $row[2]
+                ]);
+            }
         }
     }
 }
