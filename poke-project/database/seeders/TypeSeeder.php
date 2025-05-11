@@ -31,9 +31,9 @@ class TypeSeeder extends Seeder
 
             foreach($csvData as $row) {
                 $this->type->create([
-                    'name' => $row[1],
-                    'generation_introduced' => $row[2],
-                    'earlygen_movetype' => $row[3]
+                    'name' => $row[0],
+                    'generation_introduced' => $row[1],
+                    'earlygen_movetype' => $row[2]
                 ]);
             }
         }

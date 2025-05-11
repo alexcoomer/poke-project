@@ -31,8 +31,8 @@ class StatusConditionSeeder extends Seeder
 
             foreach($csvData as $row) {
                 $this->statusCondition->create([
-                    'name' => $row[1],
-                    'abbreviation' => $row[2]
+                    'name' => $row[0],
+                    'abbreviation' => $row[1]
                 ]);
             }
         }

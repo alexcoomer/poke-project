@@ -14,11 +14,14 @@ return new class extends Migration
         Schema::create('moves', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->smallInteger('generation_introduced');
             $table->foreignId('type_id')->constrained('types');
-            $table->foreignId('move_type_id')->constrained('move_types');
             $table->smallInteger('power')->nullable();
+            $table->smallInteger('power_points');
             $table->smallInteger('accuracy')->nullable();
+            $table->smallInteger('priority');
+            $table->foreignId('target_id')->constrained('targets');
+            $table->foreignId('move_type_id')->constrained('move_types');
             $table->timestamps();
         });
     }

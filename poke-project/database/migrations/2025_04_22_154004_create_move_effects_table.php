@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('item_condition_id')->nullable()->constrained('item_conditions');
             $table->foreignId('terrain_condition_id')->nullable()->constrained('terrain_conditions');
             $table->smallInteger('effect_probability');
-            $table->enum('target', ['self', 'opponent'])->nullable();
+            $table->foreignId('target_id')->constrained('targets');
             $table->timestamps();
         });
     }

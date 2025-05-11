@@ -2,19 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Nature;
+use App\Models\Target;
 use File;
 use Illuminate\Database\Seeder;
 
-class NatureSeeder extends Seeder
+class TargetSeeder extends Seeder
 {
-    private Nature $nature;
+    private Target $target;
+    private string $csvPath = 'database/data/targets.csv';
 
-    private string $csvPath = 'database/data/natures.csv';
-
-    public function __construct(Nature $nature)
+    public function __construct(Target $target)
     {
-        $this->nature = $nature;
+        $this->target = $target;
     }
 
     /**
@@ -31,10 +30,8 @@ class NatureSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->nature->create([
-                    'name' => $row[0],
-                    'boosted_stat_id' => $row[1],
-                    'reduced_stat_id' => $row[2]
+                $this->target->create([
+                    'name' => $row[0]
                 ]);
             }
         }

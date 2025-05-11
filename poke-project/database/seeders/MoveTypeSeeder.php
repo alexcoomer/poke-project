@@ -31,7 +31,7 @@ class MoveTypeSeeder extends Seeder
 
             foreach($csvData as $row) {
                 $this->moveType->create([
-                    'name' => $row[1],
+                    'name' => $row[0],
                 ]);
             }
         }

@@ -31,8 +31,8 @@ class StatTypeSeeder extends Seeder
 
             foreach($csvData as $row) {
                 $this->statType->create([
-                    'name' => $row[1],
-                    'abbreviation' => $row[2]
+                    'name' => $row[0],
+                    'abbreviation' => $row[1]
                 ]);
             }
         }

@@ -1,0 +1,26 @@
+Name,Boosted Stat ID,Reduced Stat ID
+Hardy,2,2
+Lonely,2,3
+Adamant,2,4
+Naughty,2,5
+Brave,2,6
+Bold,3,2
+Docile,3,3
+Impish,3,4
+Lax,3,5
+Relaxed,3,6
+Modest,4,2
+Mild,4,3
+Bashful,4,4
+Rash,4,5
+Quiet,4,6
+Calm,5,2
+Gentle,5,3
+Careful,5,4
+Quirky,5,5
+Sassy,5,6
+Timid,6,2
+Hasty,6,3
+Jolly,6,4
+Naive,6,5
+Serious,6,6
