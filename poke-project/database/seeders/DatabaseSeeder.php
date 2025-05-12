@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(StatTypeSeeder::class);
         $this->call(StatusConditionSeeder::class);
         $this->call(TargetSeeder::class);
+        $this->call(GameSeeder::class);
 
         $this->call(NatureSeeder::class);
 
