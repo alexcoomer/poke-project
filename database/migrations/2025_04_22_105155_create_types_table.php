@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->smallInteger('generation_introduced');
-            $table->smallInteger('earlygen_movetype');
+            $table->foreignId('generation_id')->constrained('generations');
+            $table->foreignId('damage_class_id')->nullable()->constrained('damage_classes');
             $table->timestamps();
         });
     }

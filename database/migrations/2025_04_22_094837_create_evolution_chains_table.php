@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('move_types', function (Blueprint $table) {
+        Schema::create('evolution_chains', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            // TODO: Edit the below column to be a foreignKey on items
+            $table->smallInteger('baby_trigger_item_id');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('move_types');
+        Schema::dropIfExists('evolution_chains');
     }
 };

@@ -1,17 +1,17 @@
-Name
-Specific Move
-Selected Pokemon Me First
-Ally
-Users Field
-User Or Ally
-Opponents Field
-User
-Random Opponent
-All Other Pokemon
-Selected Pokemon
-All Opponents
-Entire Field
-User And Allies
-All Pokemon
-All Allies
-Fainting Pokemon
+ID,Name
+1,"Specific Move"
+2,"Selected Pokemon Me First"
+3,Ally
+4,"Users Field"
+5,"User Or Ally"
+6,"Opponents Field"
+7,User
+8,"Random Opponent"
+9,"All Other Pokemon"
+10,"Selected Pokemon"
+11,"All Opponents"
+12,"Entire Field"
+13,"User And Allies"
+14,"All Pokemon"
+15,"All Allies"
+16,"Fainting Pokemon"

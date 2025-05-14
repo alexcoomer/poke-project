@@ -2,20 +2,19 @@
 
 namespace Database\Seeders;
 
-use App\Models\Target;
+use App\Models\EvolutionChain;
 use File;
 use Illuminate\Database\Seeder;
 
-class TargetSeeder extends Seeder
+class EvolutionChainSeeder extends Seeder
 {
-    private Target $target;
-    private string $csvPath = 'database/data/targets.csv';
+    private EvolutionChain $evolutionChain;
+    private string $csvPath = 'database/data/evolution_chains.csv';
 
-    public function __construct(Target $target)
+    public function __construct(EvolutionChain $evolutionChain)
     {
-        $this->target = $target;
+        $this->evolutionChain = $evolutionChain;
     }
-
     /**
      * Run the database seeds.
      */
@@ -30,9 +29,9 @@ class TargetSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->target->create([
+                $this->evolutionChain->create([
                     'id' => $row[0],
-                    'name' => $row[1]
+                    'baby_trigger_item_id' => $row[1]
                 ]);
             }
         }

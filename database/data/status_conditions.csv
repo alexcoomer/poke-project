@@ -1,24 +1,24 @@
-Name,Abbreviation
-Paralysis,PAR
-Sleep,SLP
-Freeze,FRZ
-Burn,BRN
-Poison,PSN
-Badly Poisoned,TOX
-Confusion,CNF
-Infatuation,INF
-Flinch,FLN
-Trap,TRP
-Nightmare,NTM
-Torment,TMT
-Disable,DIS
-Drowsy,DRW
-Heal Block,HLB
-No Type Immunity,NTI
-Leech Seed,LCH
-Embargo,EMB
-Perish Song,PRS
-Ingrain,ING
-Silence,SIL
-Tar Shot,TAR
-Fainted,KO
+ID,Name,Abbreviation
+1,Paralysis,PAR
+2,Sleep,SLP
+3,Freeze,FRZ
+4,Burn,BRN
+5,Poison,PSN
+6,"Badly Poisoned",TOX
+7,Confusion,CNF
+8,Infatuation,INF
+9,Flinch,FLN
+10,Trap,TRP
+11,Nightmare,NTM
+12,Torment,TMT
+13,Disable,DIS
+14,Drowsy,DRW
+15,"Heal Block",HLB
+16,"No Type Immunity",NTI
+17,"Leech Seed",LCH
+18,Embargo,EMB
+19,"Perish Song",PRS
+20,Ingrain,ING
+21,Silence,SIL
+22,"Tar Shot",TAR
+23,Fainted,KO

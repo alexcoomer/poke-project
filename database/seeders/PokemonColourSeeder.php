@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Target;
+use App\Models\PokemonColour;
 use File;
 use Illuminate\Database\Seeder;
 
-class TargetSeeder extends Seeder
+class PokemonColourSeeder extends Seeder
 {
-    private Target $target;
-    private string $csvPath = 'database/data/targets.csv';
+    private PokemonColour $pokemonColour;
+    private string $csvPath = 'database/data/pokemon_colours.csv';
 
-    public function __construct(Target $target)
+    public function __construct(PokemonColour $pokemonColour)
     {
-        $this->target = $target;
+        $this->pokemonColour = $pokemonColour;
     }
 
     /**
@@ -30,7 +30,7 @@ class TargetSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->target->create([
+                $this->pokemonColour->create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

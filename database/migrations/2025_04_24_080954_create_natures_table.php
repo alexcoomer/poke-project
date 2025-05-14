@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('natures', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('boosted_stat_id')->constrained('stat_types');
-            $table->foreignId('reduced_stat_id')->constrained('stat_types');
+            $table->foreignId('decreased_stat_id')->constrained('stat_types');
+            $table->foreignId('increased_stat_id')->constrained('stat_types');
+            // TODO: Implement flavours table
+            $table->smallInteger('hates_flavour_id');
+            $table->smallInteger('likes_flavour_id');
+            $table->smallInteger('game_index');
             $table->timestamps();
         });
     }

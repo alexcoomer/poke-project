@@ -35,15 +35,16 @@ class MoveSeeder extends Seeder
                 Log::warning($row);
 
                 $this->move->create([
-                    'name' => $row[0],
-                    'generation_introduced' => $row[1],
-                    'type_id' => $row[2],
-                    'power' => $row[3] === '' ? null : $row[3],
-                    'power_points' => $row[4],
-                    'accuracy' => $row[5] === '' ? null : $row[5],
-                    'priority' => $row[6],
-                    'target_id' => $row[7],
-                    'move_type_id' => $row[8]
+                    'id' => $row[0],
+                    'name' => $row[1],
+                    'generation_introduced_id' => $row[2],
+                    'type_id' => $row[3],
+                    'power' => $row[4] === '' ? null : $row[4],
+                    'power_points' => $row[5],
+                    'accuracy' => $row[6] === '' ? null : $row[6],
+                    'priority' => $row[7],
+                    'target_id' => $row[8],
+                    'damage_class_id' => $row[9]
                 ]);
             }
         }

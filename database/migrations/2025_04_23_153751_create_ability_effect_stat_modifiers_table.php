@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('ability_effect_id')->constrained('ability_effects');
             $table->foreignId('stat_modifier_id')->constrained('stat_modifiers');
-            //TODO: Maybe change 'move_conditions' to a general 'conditions' table and use between moves, abilities and items
+            //TODO: Maybe change 'move_conditions' to a general 'conditions' table and use between moves, abilities and items.
+            //This will need to reference the 'conditions' table
             $table->timestamps();
         });
     }

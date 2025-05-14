@@ -20,13 +20,18 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(GenerationSeeder::class);
-        $this->call(MoveTypeSeeder::class);
+        $this->call(DamageClassSeeder::class);
         $this->call(TypeSeeder::class);
         $this->call(StatTypeSeeder::class);
         $this->call(StatusConditionSeeder::class);
         $this->call(TargetSeeder::class);
         $this->call(GameSeeder::class);
+        $this->call(PokemonColourSeeder::class);
+        $this->call(PokemonGrowthRateSeeder::class);
+        $this->call(PokemonHabitatSeeder::class);
+        $this->call(PokemonShapeSeeder::class);
 
+        $this->call(EvolutionChainSeeder::class);
         $this->call(NatureSeeder::class);
 
         $this->call(MoveSeeder::class);

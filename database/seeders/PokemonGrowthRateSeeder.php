@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Target;
+use App\Models\PokemonGrowthRate;
 use File;
 use Illuminate\Database\Seeder;
 
-class TargetSeeder extends Seeder
+class PokemonGrowthRateSeeder extends Seeder
 {
-    private Target $target;
-    private string $csvPath = 'database/data/targets.csv';
+    private PokemonGrowthRate $pokemonGrowthRate;
+    private string $csvPath = 'database/data/pokemon_growth_rates.csv';
 
-    public function __construct(Target $target)
+    public function __construct(PokemonGrowthRate $pokemonGrowthRate)
     {
-        $this->target = $target;
+        $this->pokemonGrowthRate = $pokemonGrowthRate;
     }
 
     /**
@@ -30,9 +30,10 @@ class TargetSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->target->create([
+                $this->pokemonGrowthRate->create([
                     'id' => $row[0],
-                    'name' => $row[1]
+                    'name' => $row[1],
+                    'formula' => $row[2]
                 ]);
             }
         }

@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stat_types', function (Blueprint $table) {
+        Schema::create('pokemon_evolutions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('abbreviation');
-            $table->foreignId('damage_class_id')->nullable()->constrained('damage_classes');
-            $table->boolean('is_battle_only');
-            $table->smallInteger('game_index');
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stat_types');
+        Schema::dropIfExists('pokemon_evolutions');
     }
 };

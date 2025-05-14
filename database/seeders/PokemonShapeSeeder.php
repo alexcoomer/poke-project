@@ -2,18 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Target;
+use App\Models\PokemonShape;
 use File;
 use Illuminate\Database\Seeder;
 
-class TargetSeeder extends Seeder
+class PokemonShapeSeeder extends Seeder
 {
-    private Target $target;
-    private string $csvPath = 'database/data/targets.csv';
-
-    public function __construct(Target $target)
+    private PokemonShape $pokemonShape;
+    private string $csvPath = 'database/data/pokemon_shapes.csv';
+    public function __construct(PokemonShape $pokemonShape)
     {
-        $this->target = $target;
+        $this->pokemonShape = $pokemonShape;
     }
 
     /**
@@ -30,7 +29,7 @@ class TargetSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->target->create([
+                $this->pokemonShape->create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

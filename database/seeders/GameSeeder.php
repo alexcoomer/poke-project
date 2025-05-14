@@ -31,9 +31,10 @@ class GameSeeder extends Seeder
 
             foreach($csvData as $row) {
                 $this->game->create([
-                    'name' => $row[0],
-                    'generation' => $row[1],
-                    'order' => $row[2]
+                    'id' => $row[0],
+                    'name' => $row[1],
+                    'generation' => $row[2],
+                    'order' => $row[3]
                 ]);
             }
         }

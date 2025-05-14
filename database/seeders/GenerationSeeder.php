@@ -31,8 +31,9 @@ class GenerationSeeder extends Seeder
 
             foreach($csvData as $row) {
                 $this->generation->create([
-                    'name' => $row[0],
-                    'name_short' => $row[1]
+                    'id' => $row[0],
+                    'name' => $row[1],
+                    'name_short' => $row[2]
                 ]);
             }
         }

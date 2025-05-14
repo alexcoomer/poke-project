@@ -18,14 +18,4 @@ class Pokemon extends Model
     {
         return $this->belongsToMany(Move::class);
     }
-
-    public function preEvolution(): BelongsTo
-    {
-        return $this->belongsTo(Pokemon::class, 'pre_evolution_id');
-    }
-
-    public function evolutions(): HasMany
-    {
-        return $this->hasMany(Pokemon::class, 'pre_evolution_id');
-    }
 }

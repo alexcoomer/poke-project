@@ -13,16 +13,12 @@ return new class extends Migration
     {
         Schema::create('pokemon', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('pokedex_number');
             $table->string('name');
-            $table->string('image_path')->nullable();
-            $table->foreignId('pre_evolution_id')->nullable()->constrained('pokemon');
-            $table->smallInteger('base_hit_points');
-            $table->smallInteger('base_attack');
-            $table->smallInteger('base_defence');
-            $table->smallInteger('base_special_attack');
-            $table->smallInteger('base_special_defence');
-            $table->smallInteger('base_speed');
+            $table->foreignId('species_id')->constrained('pokemon_species');
+            $table->smallInteger('height');
+            $table->smallInteger('weight');
+            $table->smallInteger('base_experience');
+            $table->boolean('is_default');
             $table->timestamps();
         });
     }

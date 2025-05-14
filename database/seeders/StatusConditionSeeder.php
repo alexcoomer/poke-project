@@ -22,17 +22,18 @@ class StatusConditionSeeder extends Seeder
     public function run(): void
     {
         $csvFullPath = base_path($this->csvPath);
-        
+
         if(File::exists($csvFullPath)) {
             $csvData = array_map('str_getcsv', file($csvFullPath));
-            
+
             //Skip header row
             array_shift($csvData);
 
             foreach($csvData as $row) {
                 $this->statusCondition->create([
-                    'name' => $row[0],
-                    'abbreviation' => $row[1]
+                    'id' => $row[0],
+                    'name' => $row[1],
+                    'abbreviation' => $row[2]
                 ]);
             }
         }

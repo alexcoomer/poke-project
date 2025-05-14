@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->smallInteger('generation');
+            $table->foreignId('generation')->constrained('generations');
             $table->smallInteger('order');
             $table->timestamps();
         });

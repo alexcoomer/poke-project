@@ -22,18 +22,19 @@ class TypeSeeder extends Seeder
     public function run(): void
     {
         $csvFullPath = base_path($this->csvPath);
-        
+
         if(File::exists($csvFullPath)) {
             $csvData = array_map('str_getcsv', file($csvFullPath));
-            
+
             //Skip header row
             array_shift($csvData);
 
             foreach($csvData as $row) {
                 $this->type->create([
-                    'name' => $row[0],
-                    'generation_introduced' => $row[1],
-                    'earlygen_movetype' => $row[2]
+                    'id' => $row[0],
+                    'name' => $row[1],
+                    'generation_id' => $row[2],
+                    'damage_class_id' => $row[3] === '' ? null : $row[3]
                 ]);
             }
         }

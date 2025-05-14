@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //TODO: Maybe change 'move_conditions' to a general 'conditions' table and use between moves, abilities and items
         Schema::create('move_conditions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('stat_effect_id')->nullable()->constrained('stat_effects');

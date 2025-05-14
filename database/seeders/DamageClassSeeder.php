@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\MoveType;
+use App\Models\DamageClass;
 use File;
 use Illuminate\Database\Seeder;
 
-class MoveTypeSeeder extends Seeder
+class DamageClassSeeder extends Seeder
 {
-    private MoveType $moveType;
-    private string $csvPath = 'database/data/move_types.csv';
+    private DamageClass $damageClass;
+    private string $csvPath = 'database/data/damage_classes.csv';
 
-    public function __construct(MoveType $moveType)
+    public function __construct(DamageClass $damageClass)
     {
-        $this->moveType = $moveType;
+        $this->damageClass = $damageClass;
     }
 
     /**
@@ -22,16 +22,17 @@ class MoveTypeSeeder extends Seeder
     public function run(): void
     {
         $csvFullPath = base_path($this->csvPath);
-        
+
         if(File::exists($csvFullPath)) {
             $csvData = array_map('str_getcsv', file($csvFullPath));
-            
+
             //Skip header row
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->moveType->create([
-                    'name' => $row[0],
+                $this->damageClass->create([
+                    'id' => $row[0],
+                    'name' => $row[1]
                 ]);
             }
         }
