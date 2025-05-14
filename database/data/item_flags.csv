@@ -1,0 +1,9 @@
+Id,Name
+1,Countable
+2,Consumable
+3,"Usable Overworld"
+4,"Usable In Battle"
+5,Holdable
+6,"Holdable Passive"
+7,"Holdable Active"
+8,Underground

@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('evolution_chains', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('baby_trigger_item_id')->nullable()->constrained('items');
+        Schema::create('item_flag_map', function (Blueprint $table) {
+            $table->foreignId('item_id')->constrained('items');
+            $table->foreignId('item_flag_id')->constrained('item_flags');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('evolution_chains');
+        Schema::dropIfExists('item_flag_map');
     }
 };

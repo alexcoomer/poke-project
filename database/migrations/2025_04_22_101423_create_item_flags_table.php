@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('evolution_chains', function (Blueprint $table) {
+        Schema::create('item_flags', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('baby_trigger_item_id')->nullable()->constrained('items');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('evolution_chains');
+        Schema::dropIfExists('item_flags');
     }
 };
