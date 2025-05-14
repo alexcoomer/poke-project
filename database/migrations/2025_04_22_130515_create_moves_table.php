@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('moves', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('generation_introduced_id')->constrained('generations');
+            $table->foreignId('generation_id')->constrained('generations');
             $table->foreignId('type_id')->constrained('types');
             $table->smallInteger('power')->nullable();
             $table->smallInteger('power_points');

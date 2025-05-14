@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('evolution_chains', function (Blueprint $table) {
             $table->id();
             // TODO: Edit the below column to be a foreignKey on items
-            $table->smallInteger('baby_trigger_item_id');
+            $table->smallInteger('baby_trigger_item_id')->nullable();
             $table->timestamps();
         });
     }

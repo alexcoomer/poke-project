@@ -5,12 +5,10 @@ namespace Database\Seeders;
 use App\Models\Move;
 use Illuminate\Database\Seeder;
 use File;
-use Illuminate\Support\Facades\Log;
 
 class MoveSeeder extends Seeder
 {
     private Move $move;
-
     private string $csvPath = 'database/data/moves.csv';
 
     public function __construct(Move $move)
@@ -32,12 +30,10 @@ class MoveSeeder extends Seeder
             array_shift($csvData);
 
             foreach ($csvData as $row) {
-                Log::warning($row);
-
                 $this->move->create([
                     'id' => $row[0],
                     'name' => $row[1],
-                    'generation_introduced_id' => $row[2],
+                    'generation_id' => $row[2],
                     'type_id' => $row[3],
                     'power' => $row[4] === '' ? null : $row[4],
                     'power_points' => $row[5],

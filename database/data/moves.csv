@@ -1,4 +1,4 @@
-ID,Name,"Generation Introduced","Type ID",Power,"Power Points",Accuracy,Priority,"Target ID","Movetype ID"
+ID,Name,"Generation ID","Type ID",Power,"Power Points",Accuracy,Priority,"Target ID","Movetype ID"
 1,Pound,1,1,40,35,100,0,10,2
 2,"Karate Chop",1,2,50,25,100,0,10,2
 3,"Double Slap",1,1,15,10,85,0,10,2

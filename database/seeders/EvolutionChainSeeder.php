@@ -31,7 +31,7 @@ class EvolutionChainSeeder extends Seeder
             foreach($csvData as $row) {
                 $this->evolutionChain->create([
                     'id' => $row[0],
-                    'baby_trigger_item_id' => $row[1]
+                    'baby_trigger_item_id' => $row[1] === '' ? null : $row[1]
                 ]);
             }
         }

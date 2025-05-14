@@ -26,7 +26,7 @@ return new class extends Migration
             $table->boolean('is_baby');
             $table->smallInteger('hatch_counter');
             $table->boolean('has_gender_differences');
-            $table->foreignId('growth_rate_id')->constrained('growth_rates');
+            $table->foreignId('growth_rate_id')->constrained('pokemon_growth_rates');
             $table->boolean('forms_switchable');
             $table->boolean('is_legendary');
             $table->boolean('is_mythical');

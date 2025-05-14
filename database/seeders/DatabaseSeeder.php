@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\PokemonSpecies;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -33,6 +34,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(EvolutionChainSeeder::class);
         $this->call(NatureSeeder::class);
+
+        $this->call(PokemonSpeciesSeeder::class);
 
         $this->call(MoveSeeder::class);
         $this->call(AbilitySeeder::class);
