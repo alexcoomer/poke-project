@@ -57,6 +57,7 @@ class CsvController
         while (($row = fgetcsv($inputFile)) !== false) {
             // Modify the identifier column (index 1)
             $row[1] = ucwords(str_replace('-', ' ', $row[1])); // Replace hyphens and capitalize words
+            // $row[2] = ucwords(str_replace('-', ' ', $row[2]));
             $rows[] = $row;
         }
         fclose($inputFile);

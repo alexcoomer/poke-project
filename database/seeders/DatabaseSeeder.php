@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\PokemonSpecies;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -21,6 +20,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(DamageClassSeeder::class);
+        $this->call(EggGroupSeeder::class);
         $this->call(EvolutionTriggerSeeder::class);
         $this->call(GenderSeeder::class);
         $this->call(GenerationSeeder::class);
@@ -53,10 +53,14 @@ class DatabaseSeeder extends Seeder
         $this->call(PokemonSpeciesSeeder::class);
 
         $this->call(PokemonSeeder::class);
+        $this->call(PokemonEggGroupSeeder::class);
         $this->call(PokemonEvolutionSeeder::class);
 
         $this->call(PokemonAbilitySeeder::class);
+        $this->call(PokemonFormSeeder::class);
         $this->call(PokemonStatSeeder::class);
         $this->call(PokemonTypeSeeder::class);
+
+        $this->call(PokemonFormTypeSeeder::class);
     }
 }
