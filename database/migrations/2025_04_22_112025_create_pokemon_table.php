@@ -18,6 +18,7 @@ return new class extends Migration
             $table->smallInteger('height');
             $table->smallInteger('weight');
             $table->smallInteger('base_experience');
+            $table->smallInteger('order');
             $table->boolean('is_default');
             $table->timestamps();
         });

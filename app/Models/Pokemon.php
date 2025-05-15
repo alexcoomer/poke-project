@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Pokemon extends Model
 {
+    protected $table = 'pokemon';
+
     public function abilities(): BelongsToMany
     {
         return $this->belongsToMany(Ability::class, 'pokemon_abilities');

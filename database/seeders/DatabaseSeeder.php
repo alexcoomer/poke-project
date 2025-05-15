@@ -46,11 +46,12 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemSeeder::class);
         $this->call(MoveSeeder::class);
 
-        $this->call(ItemFlagMapSeeder::class);
         $this->call(EvolutionChainSeeder::class);
+        $this->call(ItemFlagMapSeeder::class);
 
         $this->call(PokemonSpeciesSeeder::class);
 
+        $this->call(PokemonSeeder::class);
         $this->call(PokemonEvolutionSeeder::class);
     }
 }
