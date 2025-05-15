@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Game;
+use App\Models\GameGroup;
 use File;
 use Illuminate\Database\Seeder;
 
-class GameSeeder extends Seeder
+class GameGroupSeeder extends Seeder
 {
-    private Game $game;
-    private string $csvPath = 'database/data/games.csv';
+    private GameGroup $gameGroup;
+    private string $csvPath = 'database/data/game_groups.csv';
 
-    public function __construct(Game $game)
+    public function __construct(GameGroup $gameGroup)
     {
-        $this->game = $game;
+        $this->gameGroup = $gameGroup;
     }
 
     /**
@@ -30,10 +30,11 @@ class GameSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->game->create([
+                $this->gameGroup->create([
                     'id' => $row[0],
-                    'name' => $row[2],
-                    'game_group_id' => $row[1]
+                    'name' => $row[1],
+                    'generation' => $row[2],
+                    'order' => $row[3]
                 ]);
             }
         }

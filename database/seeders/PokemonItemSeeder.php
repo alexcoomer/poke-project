@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Game;
+use App\Models\PokemonItem;
 use File;
 use Illuminate\Database\Seeder;
 
-class GameSeeder extends Seeder
+class PokemonItemSeeder extends Seeder
 {
-    private Game $game;
-    private string $csvPath = 'database/data/games.csv';
+    private PokemonItem $pokemonItem;
+    private string $csvPath = 'database/data/pokemon_items.csv';
 
-    public function __construct(Game $game)
+    public function __construct(PokemonItem $pokemonItem)
     {
-        $this->game = $game;
+        $this->pokemonItem = $pokemonItem;
     }
 
     /**
@@ -30,10 +30,11 @@ class GameSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->game->create([
-                    'id' => $row[0],
-                    'name' => $row[2],
-                    'game_group_id' => $row[1]
+                $this->pokemonItem->create([
+                    'pokemon_id' => $row[0],
+                    'game_id' => $row[1],
+                    'item_id' => $row[2],
+                    'rarity' => $row[3]
                 ]);
             }
         }
