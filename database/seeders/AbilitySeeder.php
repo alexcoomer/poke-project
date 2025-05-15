@@ -3,12 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Ability;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use File;
 use Illuminate\Database\Seeder;
 
 class AbilitySeeder extends Seeder
 {
     private Ability $ability;
+    private string $csvPath = 'database/data/abilities.csv';
 
     public function __construct(Ability $ability)
     {
@@ -19,6 +20,22 @@ class AbilitySeeder extends Seeder
      */
     public function run(): void
     {
-        // TODO: Parse data from CSV
+        $csvFullPath = base_path($this->csvPath);
+
+        if(File::exists($csvFullPath)) {
+            $csvData = array_map('str_getcsv', file($csvFullPath));
+
+            //Skip header row
+            array_shift($csvData);
+
+            foreach($csvData as $row) {
+                $this->ability->create([
+                    'id' => $row[0],
+                    'name' => $row[1],
+                    'generation_id' => $row[2],
+                    'is_main_series' => $row[3]
+                ]);
+            }
+        }
     }
 }

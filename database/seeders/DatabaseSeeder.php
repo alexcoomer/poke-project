@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TargetSeeder::class);
         $this->call(TimeOfDaySeeder::class);
 
+        $this->call(AbilitySeeder::class);
         $this->call(GameSeeder::class);
         $this->call(ItemCategorySeeder::class);
         $this->call(LocationSeeder::class);
@@ -54,6 +55,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PokemonSeeder::class);
         $this->call(PokemonEvolutionSeeder::class);
 
+        $this->call(PokemonAbilitySeeder::class);
         $this->call(PokemonStatSeeder::class);
         $this->call(PokemonTypeSeeder::class);
     }

@@ -2,20 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Ability;
-use App\Models\Pokemon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\PokemonAbility;
+use File;
 use Illuminate\Database\Seeder;
 
 class PokemonAbilitySeeder extends Seeder
 {
-    private Pokemon $pokemon;
-    private Ability $ability;
+    private PokemonAbility $pokemonAbility;
+    private string $csvPath = 'database/data/pokemon_abilities.csv';
 
-    public function __construct(Pokemon $pokemon, Ability $ability)
+    public function __construct(PokemonAbility $pokemonAbility)
     {
-        $this->pokemon = $pokemon;
-        $this->ability = $ability;
+        $this->pokemonAbility = $pokemonAbility;
     }
 
     /**
@@ -23,6 +21,22 @@ class PokemonAbilitySeeder extends Seeder
      */
     public function run(): void
     {
+        $csvFullPath = base_path($this->csvPath);
 
+        if(File::exists($csvFullPath)) {
+            $csvData = array_map('str_getcsv', file($csvFullPath));
+
+            //Skip header row
+            array_shift($csvData);
+
+            foreach($csvData as $row) {
+                $this->pokemonAbility->create([
+                    'pokemon_id' => $row[0],
+                    'ability_id' => $row[1],
+                    'is_hidden' => $row[2],
+                    'slot' => $row[3]
+                ]);
+            }
+        }
     }
 }

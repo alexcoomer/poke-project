@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pokemon_abilities', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('pokemon_id')->constrained('pokemon');
             $table->foreignId('ability_id')->constrained('abilities');
-            $table->boolean('hidden');
+            $table->boolean('is_hidden');
+            $table->smallInteger('slot');
             $table->timestamps();
         });
     }

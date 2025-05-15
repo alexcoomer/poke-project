@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('abilities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('details');
-            $table->string('details_short');
+            $table->foreignId('generation_id')->constrained('generations');
+            $table->boolean('is_main_series');
             $table->timestamps();
         });
     }
