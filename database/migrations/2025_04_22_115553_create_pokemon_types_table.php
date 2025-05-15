@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pokemon_types', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('pokemon_id')->constrained('pokemon');
             $table->foreignId('type_id')->constrained('types');
+            $table->smallInteger('slot');
             $table->timestamps();
         });
     }
