@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\EvolutionTrigger;
+use App\Models\TimeOfDay;
 use File;
 use Illuminate\Database\Seeder;
 
-class EvolutionTriggerSeeder extends Seeder
+class TimeOfDaySeeder extends Seeder
 {
-    private EvolutionTrigger $evolutionTrigger;
-    private string $csvPath = 'database/data/evolution_triggers.csv';
+    private TimeOfDay $timeOfDay;
+    private string $csvPath = 'database/data/times_of_day.csv';
 
-    public function __construct(EvolutionTrigger $evolutionTrigger)
+    public function __construct(TimeOfDay $timeOfDay)
     {
-        $this->evolutionTrigger = $evolutionTrigger;
+        $this->timeOfDay = $timeOfDay;
     }
 
     /**
@@ -30,9 +30,11 @@ class EvolutionTriggerSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->evolutionTrigger->create([
+                $this->timeOfDay->create([
                     'id' => $row[0],
-                    'name' => $row[1] === '' ? null : $row[1]
+                    'name' => $row[1],
+                    'start_time' => $row[2] === '' ? null : $row[2],
+                    'end_time' => $row[3] === '' ? null : $row[3]
                 ]);
             }
         }

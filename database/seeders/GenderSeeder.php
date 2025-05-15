@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\EvolutionTrigger;
+use App\Models\Gender;
 use File;
 use Illuminate\Database\Seeder;
 
-class EvolutionTriggerSeeder extends Seeder
+class GenderSeeder extends Seeder
 {
-    private EvolutionTrigger $evolutionTrigger;
-    private string $csvPath = 'database/data/evolution_triggers.csv';
+    private Gender $gender;
+    private string $csvPath = 'database/data/genders.csv';
 
-    public function __construct(EvolutionTrigger $evolutionTrigger)
+    public function __construct(Gender $gender)
     {
-        $this->evolutionTrigger = $evolutionTrigger;
+        $this->gender = $gender;
     }
 
     /**
@@ -30,9 +30,9 @@ class EvolutionTriggerSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->evolutionTrigger->create([
+                $this->gender->create([
                     'id' => $row[0],
-                    'name' => $row[1] === '' ? null : $row[1]
+                    'name' => $row[1]
                 ]);
             }
         }

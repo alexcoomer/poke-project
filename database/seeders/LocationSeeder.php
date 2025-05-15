@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\EvolutionTrigger;
+use App\Models\Location;
 use File;
 use Illuminate\Database\Seeder;
 
-class EvolutionTriggerSeeder extends Seeder
+class LocationSeeder extends Seeder
 {
-    private EvolutionTrigger $evolutionTrigger;
-    private string $csvPath = 'database/data/evolution_triggers.csv';
+    private Location $location;
+    private string $csvPath = 'database/data/locations.csv';
 
-    public function __construct(EvolutionTrigger $evolutionTrigger)
+    public function __construct(Location $location)
     {
-        $this->evolutionTrigger = $evolutionTrigger;
+        $this->location = $location;
     }
 
     /**
@@ -30,9 +30,10 @@ class EvolutionTriggerSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->evolutionTrigger->create([
+                $this->location->create([
                     'id' => $row[0],
-                    'name' => $row[1] === '' ? null : $row[1]
+                    'region_id' => $row[1] === '' ? null : $row[1],
+                    'name' => $row[2]
                 ]);
             }
         }

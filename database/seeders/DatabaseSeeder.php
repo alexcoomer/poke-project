@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(DamageClassSeeder::class);
+        $this->call(EvolutionTriggerSeeder::class);
+        $this->call(GenderSeeder::class);
         $this->call(GenerationSeeder::class);
         $this->call(ItemFlagSeeder::class);
         $this->call(ItemFlingEffectSeeder::class);
@@ -29,12 +31,15 @@ class DatabaseSeeder extends Seeder
         $this->call(PokemonGrowthRateSeeder::class);
         $this->call(PokemonHabitatSeeder::class);
         $this->call(PokemonShapeSeeder::class);
+        $this->call(RegionSeeder::class);
         $this->call(StatTypeSeeder::class);
         $this->call(StatusConditionSeeder::class);
         $this->call(TargetSeeder::class);
+        $this->call(TimeOfDaySeeder::class);
 
         $this->call(GameSeeder::class);
         $this->call(ItemCategorySeeder::class);
+        $this->call(LocationSeeder::class);
         $this->call(NatureSeeder::class);
         $this->call(TypeSeeder::class);
 
@@ -45,5 +50,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EvolutionChainSeeder::class);
 
         $this->call(PokemonSpeciesSeeder::class);
+
+        $this->call(PokemonEvolutionSeeder::class);
     }
 }
