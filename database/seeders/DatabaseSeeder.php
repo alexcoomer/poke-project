@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PokemonColourSeeder::class);
         $this->call(PokemonGrowthRateSeeder::class);
         $this->call(PokemonHabitatSeeder::class);
+        $this->call(PokemonMoveMethodSeeder::class);
         $this->call(PokemonShapeSeeder::class);
         $this->call(RegionSeeder::class);
         $this->call(StatTypeSeeder::class);
@@ -60,6 +61,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PokemonAbilitySeeder::class);
         $this->call(PokemonFormSeeder::class);
         $this->call(PokemonItemSeeder::class);
+        $this->call(PokemonMoveSeeder::class);
         $this->call(PokemonStatSeeder::class);
         $this->call(PokemonTypeSeeder::class);
 

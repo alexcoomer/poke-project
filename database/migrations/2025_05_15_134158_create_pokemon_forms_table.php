@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pokemon_forms', function (Blueprint $table) {
             $table->id();
             $table->string('pokemon_form_name');
-            $table->string('form_name');
+            $table->string('form_name')->nullable();
             $table->foreignId('pokemon_id')->constrained('pokemon');
             $table->foreignId('introduced_in_game_id')->constrained('games');
             $table->boolean('is_default');

@@ -33,7 +33,7 @@ class PokemonFormSeeder extends Seeder
                 $this->pokemonForm->create([
                     'id' => $row[0],
                     'pokemon_form_name' => $row[1],
-                    'form_name' => $row[2],
+                    'form_name' => $row[2] === '' ? null : $row[2],
                     'pokemon_id' => $row[3],
                     'introduced_in_game_id' => $row[4],
                     'is_default' => $row[5],
