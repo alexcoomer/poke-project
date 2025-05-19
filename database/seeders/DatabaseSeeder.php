@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TimeOfDaySeeder::class);
 
         $this->call(AbilitySeeder::class);
+        $this->call(ExperienceSeeder::class);
         $this->call(GameGroupSeeder::class);
         $this->call(ItemCategorySeeder::class);
         $this->call(LocationSeeder::class);
@@ -51,6 +52,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(EvolutionChainSeeder::class);
         $this->call(ItemFlagMapSeeder::class);
+        $this->call(MoveMachineSeeder::class);
 
         $this->call(PokemonSpeciesSeeder::class);
 
