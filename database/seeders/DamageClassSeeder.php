@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class DamageClassSeeder extends Seeder
 {
-    private DamageClass $damageClass;
     private string $csvPath = 'database/data/damage_classes.csv';
-
-    public function __construct(DamageClass $damageClass)
-    {
-        $this->damageClass = $damageClass;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class DamageClassSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->damageClass->create([
+                DamageClass::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

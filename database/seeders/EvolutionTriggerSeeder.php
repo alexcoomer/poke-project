@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class EvolutionTriggerSeeder extends Seeder
 {
-    private EvolutionTrigger $evolutionTrigger;
     private string $csvPath = 'database/data/evolution_triggers.csv';
-
-    public function __construct(EvolutionTrigger $evolutionTrigger)
-    {
-        $this->evolutionTrigger = $evolutionTrigger;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class EvolutionTriggerSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->evolutionTrigger->create([
+                EvolutionTrigger::create([
                     'id' => $row[0],
                     'name' => $row[1] === '' ? null : $row[1]
                 ]);

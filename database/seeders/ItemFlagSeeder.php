@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class ItemFlagSeeder extends Seeder
 {
-    private ItemFlag $itemFlag;
     private string $csvPath = 'database/data/item_flags.csv';
-
-    public function __construct(ItemFlag $itemFlag)
-    {
-        $this->itemFlag = $itemFlag;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class ItemFlagSeeder extends Seeder
             array_shift($csvData);
 
             foreach ($csvData as $row) {
-                $this->itemFlag->create([
+                ItemFlag::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

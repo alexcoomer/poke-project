@@ -8,14 +8,7 @@ use Illuminate\Database\Seeder;
 
 class GenerationSeeder extends Seeder
 {
-    private Generation $generation;
     private string $csvPath = 'database/data/generations.csv';
-
-    public function __construct(Generation $generation)
-    {
-        $this->generation = $generation;
-    }
-
     /**
      * Run the database seeds.
      */
@@ -30,7 +23,7 @@ class GenerationSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->generation->create([
+                Generation::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'name_short' => $row[2]

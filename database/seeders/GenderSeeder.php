@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class GenderSeeder extends Seeder
 {
-    private Gender $gender;
     private string $csvPath = 'database/data/genders.csv';
-
-    public function __construct(Gender $gender)
-    {
-        $this->gender = $gender;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class GenderSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->gender->create([
+                Gender::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class EggGroupSeeder extends Seeder
 {
-    private EggGroup $eggGroup;
     private string $csvPath = 'database/data/egg_groups.csv';
-
-    public function __construct(EggGroup $eggGroup)
-    {
-        $this->eggGroup = $eggGroup;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class EggGroupSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->eggGroup->create([
+                EggGroup::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

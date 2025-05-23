@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class ItemFlingEffectSeeder extends Seeder
 {
-    private ItemFlingEffect $itemFlingEffect;
     private string $csvPath = 'database/data/item_fling_effects.csv';
-
-    public function __construct(ItemFlingEffect $itemFlingEffect)
-    {
-        $this->itemFlingEffect = $itemFlingEffect;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class ItemFlingEffectSeeder extends Seeder
             array_shift($csvData);
 
             foreach ($csvData as $row) {
-                $this->itemFlingEffect->create([
+                ItemFlingEffect::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);
