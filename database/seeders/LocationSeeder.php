@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class LocationSeeder extends Seeder
 {
-    private Location $location;
     private string $csvPath = 'database/data/locations.csv';
-
-    public function __construct(Location $location)
-    {
-        $this->location = $location;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class LocationSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->location->create([
+                Location::create([
                     'id' => $row[0],
                     'region_id' => $row[1] === '' ? null : $row[1],
                     'name' => $row[2]

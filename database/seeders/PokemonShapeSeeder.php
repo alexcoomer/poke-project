@@ -8,12 +8,7 @@ use Illuminate\Database\Seeder;
 
 class PokemonShapeSeeder extends Seeder
 {
-    private PokemonShape $pokemonShape;
     private string $csvPath = 'database/data/pokemon_shapes.csv';
-    public function __construct(PokemonShape $pokemonShape)
-    {
-        $this->pokemonShape = $pokemonShape;
-    }
 
     /**
      * Run the database seeds.
@@ -29,7 +24,7 @@ class PokemonShapeSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->pokemonShape->create([
+                PokemonShape::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

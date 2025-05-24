@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class StatusConditionSeeder extends Seeder
 {
-    private StatusCondition $statusCondition;
     private string $csvPath = 'database/data/status_conditions.csv';
-
-    public function __construct(StatusCondition $statusCondition)
-    {
-        $this->statusCondition = $statusCondition;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class StatusConditionSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->statusCondition->create([
+                StatusCondition::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'abbreviation' => $row[2]

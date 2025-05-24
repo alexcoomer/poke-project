@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class PokemonEggGroupSeeder extends Seeder
 {
-    private PokemonEggGroup $pokemonEggGroup;
     private string $csvPath = 'database/data/pokemon_egg_groups.csv';
-
-    public function __construct(PokemonEggGroup $pokemonEggGroup)
-    {
-        $this->pokemonEggGroup = $pokemonEggGroup;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class PokemonEggGroupSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->pokemonEggGroup->create([
+                PokemonEggGroup::create([
                     'species_id' => $row[0],
                     'egg_group_id' => $row[1]
                 ]);

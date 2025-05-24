@@ -8,13 +8,8 @@ use Illuminate\Database\Seeder;
 
 class EvolutionChainSeeder extends Seeder
 {
-    private EvolutionChain $evolutionChain;
     private string $csvPath = 'database/data/evolution_chains.csv';
 
-    public function __construct(EvolutionChain $evolutionChain)
-    {
-        $this->evolutionChain = $evolutionChain;
-    }
     /**
      * Run the database seeds.
      */
@@ -29,7 +24,7 @@ class EvolutionChainSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->evolutionChain->create([
+                EvolutionChain::create([
                     'id' => $row[0],
                     'baby_trigger_item_id' => $row[1] === '' ? null : $row[1]
                 ]);

@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class TimeOfDaySeeder extends Seeder
 {
-    private TimeOfDay $timeOfDay;
     private string $csvPath = 'database/data/times_of_day.csv';
-
-    public function __construct(TimeOfDay $timeOfDay)
-    {
-        $this->timeOfDay = $timeOfDay;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class TimeOfDaySeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->timeOfDay->create([
+                TimeOfDay::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'start_time' => $row[2] === '' ? null : $row[2],

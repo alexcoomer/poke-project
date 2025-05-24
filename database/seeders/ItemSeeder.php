@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class ItemSeeder extends Seeder
 {
-    private Item $item;
     private string $csvPath = 'database/data/items.csv';
-
-    public function __construct(Item $item)
-    {
-        $this->item = $item;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class ItemSeeder extends Seeder
             array_shift($csvData);
 
             foreach ($csvData as $row) {
-                $this->item->create([
+                Item::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'item_category_id' => $row[2],

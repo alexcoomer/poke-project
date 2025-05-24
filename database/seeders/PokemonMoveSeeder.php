@@ -9,13 +9,7 @@ use Illuminate\Database\Seeder;
 
 class PokemonMoveSeeder extends Seeder
 {
-    private PokemonMove $pokemonMove;
     private string $csvPath = 'database/data/pokemon_moves.csv';
-
-    public function __construct(PokemonMove $pokemonMove)
-    {
-        $this->pokemonMove = $pokemonMove;
-    }
 
     /**
      * Run the database seeds.

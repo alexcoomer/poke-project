@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class RegionSeeder extends Seeder
 {
-    private Region $region;
     private string $csvPath = 'database/data/regions.csv';
-
-    public function __construct(Region $region)
-    {
-        $this->region = $region;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class RegionSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->region->create([
+                Region::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

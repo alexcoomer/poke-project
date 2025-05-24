@@ -9,13 +9,7 @@ use Illuminate\Support\Facades\Schema;
 
 class PokemonSpeciesSeeder extends Seeder
 {
-    private PokemonSpecies $pokemonSpecies;
     private string $csvPath = 'database/data/pokemon_species.csv';
-
-    public function __construct(PokemonSpecies $pokemonSpecies)
-    {
-        $this->pokemonSpecies = $pokemonSpecies;
-    }
 
     /**
      * Run the database seeds.
@@ -33,7 +27,7 @@ class PokemonSpeciesSeeder extends Seeder
             Schema::disableForeignKeyConstraints();
 
             foreach ($csvData as $row) {
-                $this->pokemonSpecies->create([
+                PokemonSpecies::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'generation_id' => $row[2],

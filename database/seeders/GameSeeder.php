@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class GameSeeder extends Seeder
 {
-    private Game $game;
     private string $csvPath = 'database/data/games.csv';
-
-    public function __construct(Game $game)
-    {
-        $this->game = $game;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class GameSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->game->create([
+                Game::create([
                     'id' => $row[0],
                     'name' => $row[2],
                     'game_group_id' => $row[1]

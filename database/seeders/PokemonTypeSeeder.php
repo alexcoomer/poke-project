@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class PokemonTypeSeeder extends Seeder
 {
-    private PokemonType $pokemonType;
     private string $csvPath = 'database/data/pokemon_types.csv';
-
-    public function __construct(PokemonType $pokemonType)
-    {
-        $this->pokemonType = $pokemonType;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class PokemonTypeSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->pokemonType->create([
+                PokemonType::create([
                     'pokemon_id' => $row[0],
                     'type_id' => $row[1],
                     'slot' => $row[2]

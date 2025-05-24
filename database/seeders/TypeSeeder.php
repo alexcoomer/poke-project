@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class TypeSeeder extends Seeder
 {
-    private Type $type;
     private string $csvPath = 'database/data/types.csv';
-
-    public function __construct(Type $type)
-    {
-        $this->type = $type;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class TypeSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->type->create([
+                Type::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'generation_id' => $row[2],

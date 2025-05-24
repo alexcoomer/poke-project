@@ -8,13 +8,7 @@ use File;
 
 class MoveSeeder extends Seeder
 {
-    private Move $move;
     private string $csvPath = 'database/data/moves.csv';
-
-    public function __construct(Move $move)
-    {
-        $this->move = $move;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class MoveSeeder extends Seeder
             array_shift($csvData);
 
             foreach ($csvData as $row) {
-                $this->move->create([
+                Move::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'generation_id' => $row[2],

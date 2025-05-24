@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class PokemonMoveMethodSeeder extends Seeder
 {
-    private PokemonMoveMethod $pokemonMoveMethod;
     private string $csvPath = 'database/data/pokemon_move_methods.csv';
-
-    public function __construct(PokemonMoveMethod $pokemonMoveMethod)
-    {
-        $this->pokemonMoveMethod = $pokemonMoveMethod;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class PokemonMoveMethodSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->pokemonMoveMethod->create([
+                PokemonMoveMethod::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class PokemonEvolutionSeeder extends Seeder
 {
-    private PokemonEvolution $pokemonEvolution;
     private string $csvPath = 'database/data/pokemon_evolutions.csv';
-
-    public function __construct(PokemonEvolution $pokemonEvolution)
-    {
-        $this->pokemonEvolution = $pokemonEvolution;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class PokemonEvolutionSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->pokemonEvolution->create([
+                PokemonEvolution::create([
                     'id' => $row[0],
                     'evolved_species_id' => $row[1],
                     'evolution_trigger_id' => $row[2],

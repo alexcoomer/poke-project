@@ -8,13 +8,8 @@ use Illuminate\Database\Seeder;
 
 class AbilitySeeder extends Seeder
 {
-    private Ability $ability;
     private string $csvPath = 'database/data/abilities.csv';
 
-    public function __construct(Ability $ability)
-    {
-        $this->ability = $ability;
-    }
     /**
      * Run the database seeds.
      */
@@ -29,7 +24,7 @@ class AbilitySeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->ability->create([
+                Ability::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'generation_id' => $row[2],

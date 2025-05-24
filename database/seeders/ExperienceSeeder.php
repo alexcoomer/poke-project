@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class ExperienceSeeder extends Seeder
 {
-    private Experience $experience;
     private string $csvPath = 'database/data/experience.csv';
-
-    public function __construct(Experience $experience)
-    {
-        $this->experience = $experience;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class ExperienceSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->experience->create([
+                Experience::create([
                     'growth_rate_id' => $row[0],
                     'level' => $row[1],
                     'experience' => $row[2]

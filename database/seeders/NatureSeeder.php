@@ -8,14 +8,7 @@ use Illuminate\Database\Seeder;
 
 class NatureSeeder extends Seeder
 {
-    private Nature $nature;
-
     private string $csvPath = 'database/data/natures.csv';
-
-    public function __construct(Nature $nature)
-    {
-        $this->nature = $nature;
-    }
 
     /**
      * Run the database seeds.
@@ -31,7 +24,7 @@ class NatureSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->nature->create([
+                Nature::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'decreased_stat_id' => $row[2],

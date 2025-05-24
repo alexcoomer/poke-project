@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class PokemonColourSeeder extends Seeder
 {
-    private PokemonColour $pokemonColour;
     private string $csvPath = 'database/data/pokemon_colours.csv';
-
-    public function __construct(PokemonColour $pokemonColour)
-    {
-        $this->pokemonColour = $pokemonColour;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class PokemonColourSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->pokemonColour->create([
+                PokemonColour::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

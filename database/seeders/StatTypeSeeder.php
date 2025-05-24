@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class StatTypeSeeder extends Seeder
 {
-    private StatType $statType;
     private string $csvPath = 'database/data/stat_types.csv';
-
-    public function __construct(StatType $statType)
-    {
-        $this->statType = $statType;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class StatTypeSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->statType->create([
+                StatType::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'abbreviation' => $row[2],

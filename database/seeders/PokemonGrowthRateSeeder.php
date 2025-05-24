@@ -8,13 +8,7 @@ use Illuminate\Database\Seeder;
 
 class PokemonGrowthRateSeeder extends Seeder
 {
-    private PokemonGrowthRate $pokemonGrowthRate;
     private string $csvPath = 'database/data/pokemon_growth_rates.csv';
-
-    public function __construct(PokemonGrowthRate $pokemonGrowthRate)
-    {
-        $this->pokemonGrowthRate = $pokemonGrowthRate;
-    }
 
     /**
      * Run the database seeds.
@@ -30,7 +24,7 @@ class PokemonGrowthRateSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                $this->pokemonGrowthRate->create([
+                PokemonGrowthRate::create([
                     'id' => $row[0],
                     'name' => $row[1],
                     'formula' => $row[2]
