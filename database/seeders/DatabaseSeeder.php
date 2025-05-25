@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
+        $this->call(CritStageSeeder::class);
+        $this->call(CritStageEffectSeeder::class);
         $this->call(DamageClassSeeder::class);
         $this->call(EggGroupSeeder::class);
         $this->call(EvolutionTriggerSeeder::class);
@@ -55,6 +57,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EvolutionChainSeeder::class);
         $this->call(ItemFlagMapSeeder::class);
         $this->call(MoveMachineSeeder::class);
+        $this->call(MoveMultihitSeeder::class);
 
         $this->call(PokemonSpeciesSeeder::class);
 
