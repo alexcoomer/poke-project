@@ -73,6 +73,4 @@ class CsvController
         }
         fclose($outputFile);
     }
-
-
 }

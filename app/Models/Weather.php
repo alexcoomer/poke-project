@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MoveEffect extends Model
+class Weather extends Model
 {
-    //
+    protected $table = 'weather';
 }

@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('terrain_conditions', function (Blueprint $table) {
+        Schema::create('weather', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('abbreviation');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('terrain_conditions');
+        Schema::dropIfExists('weather');
     }
 };

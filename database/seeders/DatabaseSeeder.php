@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
         $this->call(StatusConditionSeeder::class);
         $this->call(TargetSeeder::class);
         $this->call(TimeOfDaySeeder::class);
+        $this->call(WeatherSeeder::class);
 
         $this->call(AbilitySeeder::class);
         $this->call(ExperienceSeeder::class);
@@ -44,6 +45,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemCategorySeeder::class);
         $this->call(LocationSeeder::class);
         $this->call(NatureSeeder::class);
+        $this->call(StatEffectSeeder::class);
         $this->call(TypeSeeder::class);
 
         $this->call(GameSeeder::class);
