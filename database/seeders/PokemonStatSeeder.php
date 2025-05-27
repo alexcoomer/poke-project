@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\PokemonStat;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
 class PokemonStatSeeder extends Seeder

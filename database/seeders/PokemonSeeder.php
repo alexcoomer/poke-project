@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Pokemon;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
 class PokemonSeeder extends Seeder

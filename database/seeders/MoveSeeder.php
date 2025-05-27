@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Move;
 use Illuminate\Database\Seeder;
-use File;
+use Illuminate\Support\Facades\File;
 
 class MoveSeeder extends Seeder
 {

@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\DamageClass;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
 class DamageClassSeeder extends Seeder

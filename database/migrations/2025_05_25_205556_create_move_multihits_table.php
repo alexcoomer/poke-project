@@ -18,6 +18,7 @@ return new class extends Migration
             $table->smallInteger('probability_percentage');
             $table->boolean('is_accuracy_checked_each_hit');
             $table->boolean('is_equal_to_number_of_conscious_party_members');
+            $table->smallInteger('power_addend')->nullable();
             $table->timestamps();
         });
     }

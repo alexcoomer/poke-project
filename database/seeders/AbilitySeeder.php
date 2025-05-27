@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Ability;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
 class AbilitySeeder extends Seeder

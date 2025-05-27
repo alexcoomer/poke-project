@@ -31,6 +31,7 @@ class MoveMultihitSeeder extends Seeder
                     'probability_percentage' => $row[3],
                     'is_accuracy_checked_each_hit' => $row[4],
                     'is_equal_to_number_of_conscious_party_members' => $row[5],
+                    'power_addend' => $row[6] === '' ? null : $row[6]
                 ]);
             }
         }

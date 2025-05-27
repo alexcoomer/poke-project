@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\PokemonSpecies;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 

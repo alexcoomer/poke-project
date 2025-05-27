@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 
 use App\Models\PokemonMove;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
 class PokemonMoveSeeder extends Seeder
