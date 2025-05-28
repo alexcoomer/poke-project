@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EvolutionChainSeeder::class);
         $this->call(ItemFlagMapSeeder::class);
         $this->call(MoveMachineSeeder::class);
-        $this->call(MoveMultihitSeeder::class);
+        $this->call(MoveMultiHitSeeder::class);
 
         $this->call(PokemonSpeciesSeeder::class);
 
