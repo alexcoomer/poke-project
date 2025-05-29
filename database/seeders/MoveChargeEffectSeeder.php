@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Weather;
+use App\Models\MoveChargeEffect;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class WeatherSeeder extends Seeder
+class MoveChargeEffectSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/weathers.csv';
+    private string $csvPath = 'database/data/move_charge_effects.csv';
 
     /**
      * Run the database seeds.
@@ -24,9 +24,9 @@ class WeatherSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                Weather::create([
+                MoveChargeEffect::create([
                     'id' => $row[0],
-                    'name' => $row[1]
+                    'move_id' => $row[1]
                 ]);
             }
         }

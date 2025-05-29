@@ -1,4 +1,5 @@
 ID,Name,Abbreviation
+0,Fainted,KO
 1,Paralysis,PAR
 2,Sleep,SLP
 3,Freeze,FRZ
@@ -10,7 +11,7 @@ ID,Name,Abbreviation
 9,Flinch,FLN
 10,Trap,TRP
 11,Nightmare,NTM
-12,Torment,TMT
+12,Torment,TOR
 13,Disable,DIS
 14,Drowsy,DRW
 15,"Heal Block",HLB
@@ -21,4 +22,5 @@ ID,Name,Abbreviation
 20,Ingrain,ING
 21,Silence,SIL
 22,"Tar Shot",TAR
-23,Fainted,KO
+23,Taunt,TAU
+24,Encore,ENC

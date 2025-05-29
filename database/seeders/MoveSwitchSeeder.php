@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Weather;
+use App\Models\MoveSwitch;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class WeatherSeeder extends Seeder
+class MoveSwitchSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/weathers.csv';
+    private string $csvPath = 'database/data/move_switches.csv';
 
     /**
      * Run the database seeds.
@@ -24,9 +24,11 @@ class WeatherSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                Weather::create([
+                MoveSwitch::create([
                     'id' => $row[0],
-                    'name' => $row[1]
+                    'move_effect_id' => $row[1],
+                    'switch_type_id' => $row[2],
+                    'target_id' => $row[3]
                 ]);
             }
         }

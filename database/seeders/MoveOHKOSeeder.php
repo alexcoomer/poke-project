@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Weather;
+use App\Models\MoveOHKO;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class WeatherSeeder extends Seeder
+class MoveOHKOSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/weathers.csv';
+    private string $csvPath = 'database/data/move_ohkos.csv';
 
     /**
      * Run the database seeds.
@@ -24,9 +24,10 @@ class WeatherSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                Weather::create([
+                MoveOHKO::create([
                     'id' => $row[0],
-                    'name' => $row[1]
+                    'move_effect_id' => $row[1],
+                    'target_id' => $row[2]
                 ]);
             }
         }

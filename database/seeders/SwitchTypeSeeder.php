@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Weather;
+use App\Models\SwitchType;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class WeatherSeeder extends Seeder
+class SwitchTypeSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/weathers.csv';
+    private string $csvPath = 'database/data/switch_types.csv';
 
     /**
      * Run the database seeds.
@@ -24,7 +24,7 @@ class WeatherSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                Weather::create([
+                SwitchType::create([
                     'id' => $row[0],
                     'name' => $row[1]
                 ]);

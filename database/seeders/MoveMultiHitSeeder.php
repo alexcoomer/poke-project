@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 
 class MoveMultiHitSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/move_multihits.csv';
+    private string $csvPath = 'database/data/move_multi_hits.csv';
 
     /**
      * Run the database seeds.
@@ -27,7 +27,7 @@ class MoveMultiHitSeeder extends Seeder
                 MoveMultiHit::create([
                     'id' => $row[0],
                     'move_id' => $row[1],
-                    'number' => $row[2],
+                    'hits' => $row[2],
                     'chance' => $row[3],
                     'is_accuracy_checked_each_hit' => $row[4],
                     'is_equal_to_number_of_conscious_party_members' => $row[5],

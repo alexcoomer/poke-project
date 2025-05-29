@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('weather', function (Blueprint $table) {
+        Schema::create('move_ohkos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('move_effect_id')->constrained('move_effects');
+            $table->foreignId('target_id')->constrained('targets');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('weather');
+        Schema::dropIfExists('move_ohkos');
     }
 };
