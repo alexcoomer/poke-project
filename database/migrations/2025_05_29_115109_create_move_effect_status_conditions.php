@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('crit_stages', function (Blueprint $table) {
+        Schema::create('move_effect_status_conditions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('move_effect_id')->constrained('move_effects');
+            $table->foreignId('status_condition_id')->constrained('status_conditions');
+            $table->foreignId('target_id')->constrained('targets');
             $table->smallInteger('chance');
             $table->timestamps();
         });
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('crit_stages');
+        Schema::dropIfExists('move_effect_status_conditions');
     }
 };

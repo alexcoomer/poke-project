@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\CritStage;
+use App\Models\MoveEffectStatusCondition;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class CritStageSeeder extends Seeder
+class MoveEffectStatusConditionSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/crit_stages.csv';
+    private string $csvPath = 'database/data/move_effect_status_conditions.csv';
 
     /**
      * Run the database seeds.
@@ -24,10 +24,12 @@ class CritStageSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                CritStage::create([
+                MoveEffectStatusCondition::create([
                     'id' => $row[0],
-                    'name' => $row[1],
-                    'chance' => $row[2]
+                    'move_effect_id' => $row[1],
+                    'status_condition_id' => $row[2],
+                    'target_id' => $row[3],
+                    'chance' => $row[4]
                 ]);
             }
         }
