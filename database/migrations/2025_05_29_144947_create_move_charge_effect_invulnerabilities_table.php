@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('move_ohkos', function (Blueprint $table) {
+        Schema::create('move_charge_effect_invulnerabilities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('move_effect_id')->constrained('move_effects');
-            $table->foreignId('target_id')->constrained('targets');
+            $table->foreignId('move_charge_effect_id')->constrained('move_charge_effects');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('move_ohkos');
+        Schema::dropIfExists('move_charge_effect_invulnerabilities');
     }
 };

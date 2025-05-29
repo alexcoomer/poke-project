@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\MoveSwitch;
+use App\Models\MoveEffectStatEffect;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class MoveSwitchSeeder extends Seeder
+class MoveEffectStatEffectSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/move_switches.csv';
+    private string $csvPath = 'database/data/move_effect_stat_effects.csv';
 
     /**
      * Run the database seeds.
@@ -24,11 +24,12 @@ class MoveSwitchSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                MoveSwitch::create([
+                MoveEffectStatEffect::create([
                     'id' => $row[0],
                     'move_effect_id' => $row[1],
-                    'switch_type_id' => $row[2],
-                    'target_id' => $row[3]
+                    'stat_effect_id' => $row[2],
+                    'target_id' => $row[3],
+                    'chance' => $row[4]
                 ]);
             }
         }

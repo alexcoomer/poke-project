@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\MoveOHKO;
+use App\Models\MoveEffectSwitch;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class MoveOHKOSeeder extends Seeder
+class MoveEffectSwitchSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/move_ohkos.csv';
+    private string $csvPath = 'database/data/move_effect_switches.csv';
 
     /**
      * Run the database seeds.
@@ -24,10 +24,11 @@ class MoveOHKOSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                MoveOHKO::create([
+                MoveEffectSwitch::create([
                     'id' => $row[0],
                     'move_effect_id' => $row[1],
-                    'target_id' => $row[2]
+                    'switch_type_id' => $row[2],
+                    'target_id' => $row[3]
                 ]);
             }
         }

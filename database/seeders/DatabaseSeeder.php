@@ -63,9 +63,11 @@ class DatabaseSeeder extends Seeder
         $this->call(MoveMachineSeeder::class);
         $this->call(MoveMultiHitSeeder::class);
 
+        $this->call(MoveChargeEffectInvulnerabilitySeeder::class);
+        $this->call(MoveEffectOHKOSeeder::class);
+        $this->call(MoveEffectStatEffectSeeder::class);
         $this->call(MoveEffectStatusConditionSeeder::class);
-        $this->call(MoveOHKOSeeder::class);
-        $this->call(MoveSwitchSeeder::class);
+        $this->call(MoveEffectSwitchSeeder::class);
         $this->call(PokemonSpeciesSeeder::class);
 
         $this->call(PokemonSeeder::class);

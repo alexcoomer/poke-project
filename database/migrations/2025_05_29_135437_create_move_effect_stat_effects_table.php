@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('move_switches', function (Blueprint $table) {
+        Schema::create('move_effect_stat_effects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('move_effect_id')->constrained('move_effects');
-            $table->foreignId('switch_type_id')->constrained('switch_types');
+            $table->foreignId('stat_effect_id')->constrained('stat_effects');
             $table->foreignId('target_id')->constrained('targets');
+            $table->smallInteger('chance');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('move_switches');
+        Schema::dropIfExists('move_effect_stat_effects');
     }
 };
