@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SwitchTypeSeeder::class);
         $this->call(TargetSeeder::class);
         $this->call(TimeOfDaySeeder::class);
+        $this->call(TrapTypeSeeder::class);
         $this->call(WeatherSeeder::class);
 
         $this->call(AbilitySeeder::class);
@@ -64,10 +65,12 @@ class DatabaseSeeder extends Seeder
         $this->call(MoveMultiHitSeeder::class);
 
         $this->call(MoveChargeEffectInvulnerabilitySeeder::class);
+        $this->call(MoveChargeEffectStatEffectSeeder::class);
         $this->call(MoveEffectOHKOSeeder::class);
         $this->call(MoveEffectStatEffectSeeder::class);
         $this->call(MoveEffectStatusConditionSeeder::class);
         $this->call(MoveEffectSwitchSeeder::class);
+        $this->call(MoveEffectTrapSeeder::class);
         $this->call(PokemonSpeciesSeeder::class);
 
         $this->call(PokemonSeeder::class);

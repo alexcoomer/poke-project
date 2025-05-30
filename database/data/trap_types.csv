@@ -1,0 +1,3 @@
+ID,Name,"Min Turns","Max Turns","Percentage Damage Per Turn"
+1,"Indefinite",,,
+2,"Standard Incremental Damage",4,5,1250

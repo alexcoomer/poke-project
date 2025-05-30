@@ -73,4 +73,25 @@ class CsvController
         }
         fclose($outputFile);
     }
+
+    public function moveEffectCsv()
+    {
+        $filePath = base_path('database/data/move_effects.csv');
+
+        // Open file for writing
+        $outputFile = fopen($filePath, 'w');
+        if (!$outputFile) {
+            die("Error writing file.");
+        }
+
+        // Write headers
+        fputcsv($outputFile, ['ID', 'Move ID']);
+
+        // Write rows from 1 to 919
+        for ($index = 1; $index <= 919; $index++) {
+            fputcsv($outputFile, [$index, $index]);
+        }
+
+        fclose($outputFile);
+    }
 }
