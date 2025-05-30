@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
+        $this->call(ConditionSeeder::class);
         $this->call(CritStageSeeder::class);
         $this->call(CritStageEffectSeeder::class);
         $this->call(DamageClassSeeder::class);
@@ -34,6 +35,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PokemonHabitatSeeder::class);
         $this->call(PokemonMoveMethodSeeder::class);
         $this->call(PokemonShapeSeeder::class);
+        $this->call(RecoilTypeSeeder::class);
         $this->call(RegionSeeder::class);
         $this->call(StatTypeSeeder::class);
         $this->call(StatusConditionSeeder::class);
@@ -66,7 +68,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(MoveChargeEffectInvulnerabilitySeeder::class);
         $this->call(MoveChargeEffectStatEffectSeeder::class);
+        $this->call(MoveEffectConditionSeeder::class);
         $this->call(MoveEffectOHKOSeeder::class);
+        $this->call(MoveEffectRecoilSeeder::class);
         $this->call(MoveEffectStatEffectSeeder::class);
         $this->call(MoveEffectStatusConditionSeeder::class);
         $this->call(MoveEffectSwitchSeeder::class);
