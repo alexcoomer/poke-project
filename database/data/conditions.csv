@@ -1,2 +1,6 @@
 ID,Description
-1,"User's current attack misses"
+1,"The opponent is in the invulnerable stage of Bounce, Fly or Sky Drop"
+2,"The opponent is in the invulnerable stage of Dig"
+3,"The opponent is in the invulnerable stage of Dive"
+4,"The opponent is in the invulnerable stage of Shadow Force or Phantom Force"
+5,"The user's current attack misses"

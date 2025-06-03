@@ -35,8 +35,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PokemonHabitatSeeder::class);
         $this->call(PokemonMoveMethodSeeder::class);
         $this->call(PokemonShapeSeeder::class);
+        $this->call(PowerStaticModifierSeeder::class);
         $this->call(RecoilTypeSeeder::class);
         $this->call(RegionSeeder::class);
+        $this->call(ScalingTypeSeeder::class);
         $this->call(StatTypeSeeder::class);
         $this->call(StatusConditionSeeder::class);
         $this->call(SwitchTypeSeeder::class);
@@ -51,6 +53,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemCategorySeeder::class);
         $this->call(LocationSeeder::class);
         $this->call(NatureSeeder::class);
+        $this->call(PowerScalingModifierSeeder::class);
         $this->call(StatEffectSeeder::class);
         $this->call(TypeSeeder::class);
 
