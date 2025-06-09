@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Condition;
+use App\Models\MoveEffectGuaranteedHit;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class ConditionSeeder extends Seeder
+class MoveEffectGuaranteedHitSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/conditions.csv';
+    private string $csvPath = 'database/data/move_effect_guaranteed_hits.csv';
 
     /**
      * Run the database seeds.
@@ -24,9 +24,10 @@ class ConditionSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                Condition::create([
+                MoveEffectGuaranteedHit::create([
                     'id' => $row[0],
-                    'description' => $row[1]
+                    'move_effect_id' => $row[1],
+                    'battle_condition_id' => $row[2] === '' ? null : $row[2]
                 ]);
             }
         }

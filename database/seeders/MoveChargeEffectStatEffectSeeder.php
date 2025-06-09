@@ -27,7 +27,8 @@ class MoveChargeEffectStatEffectSeeder extends Seeder
                 MoveChargeEffectStatEffect::create([
                     'id' => $row[0],
                     'move_charge_effect_id' => $row[1],
-                    'stat_effect_id' => $row[2]
+                    'stat_effect_id' => $row[2],
+                    'battle_condition_id' => $row[3] === '' ? null : $row[3]
                 ]);
             }
         }

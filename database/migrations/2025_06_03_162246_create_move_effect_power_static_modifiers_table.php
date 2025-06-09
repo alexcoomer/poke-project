@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('move_effect_power_static_modifiers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('move_effect_id')->constrained('move_effects');
+            $table->foreignId('power_static_modifier_id')->constrained('power_static_modifiers');
+            $table->foreignId('target_id')->constrained('targets');
+            $table->smallInteger('chance');
+            $table->foreignId('battle_condition_id')->nullable()->constrained('battle_conditions');
             $table->timestamps();
         });
     }

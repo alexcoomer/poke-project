@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('stat_effect_id')->constrained('stat_effects');
             $table->foreignId('target_id')->constrained('targets');
             $table->smallInteger('chance');
+            $table->foreignId('battle_condition_id')->nullable()->constrained('battle_conditions');
             $table->timestamps();
         });
     }

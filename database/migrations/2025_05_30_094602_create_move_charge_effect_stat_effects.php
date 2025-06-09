@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('move_charge_effect_id')->constrained('move_charge_effects');
             $table->foreignId('stat_effect_id')->constrained('stat_effects');
+            $table->foreignId('battle_condition_id')->nullable()->constrained('battle_conditions');
             $table->timestamps();
         });
     }

@@ -4,3 +4,7 @@ ID,"Move ID",Hits,Probability,"Is Accuracy Checked Each Hit","Is Equal To Number
 3,3,4,1500,0,0,
 4,3,5,1500,0,0,
 5,24,2,10000,0,0,
+6,31,2,3500,0,0,
+7,31,3,3500,0,0,
+8,31,4,1500,0,0,
+9,31,5,1500,0,0,

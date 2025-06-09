@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\MoveEffectCondition;
+use App\Models\MoveEffectPowerStaticModifier;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class MoveEffectConditionSeeder extends Seeder
+class MoveEffectPowerStaticModifierSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/move_effect_conditions.csv';
+    private string $csvPath = 'database/data/move_effect_power_static_modifiers.csv';
 
     /**
      * Run the database seeds.
@@ -24,10 +24,13 @@ class MoveEffectConditionSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                MoveEffectCondition::create([
+                MoveEffectPowerStaticModifier::create([
                     'id' => $row[0],
                     'move_effect_id' => $row[1],
-                    'condition_id' => $row[2]
+                    'power_static_modifier_id' => $row[2],
+                    'target_id' => $row[3],
+                    'chance' => $row[4],
+                    'battle_condition_id' => $row[5] === '' ? null : $row[5]
                 ]);
             }
         }

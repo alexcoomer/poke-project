@@ -27,7 +27,8 @@ class MoveEffectTrapSeeder extends Seeder
                 MoveEffectTrap::create([
                     'id' => $row[0],
                     'move_effect_id' => $row[1],
-                    'trap_type_id' => $row[2]
+                    'trap_type_id' => $row[2],
+                    'battle_condition_id' => $row[3] === '' ? null : $row[3]
                 ]);
             }
         }

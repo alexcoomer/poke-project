@@ -29,7 +29,8 @@ class MoveEffectStatEffectSeeder extends Seeder
                     'move_effect_id' => $row[1],
                     'stat_effect_id' => $row[2],
                     'target_id' => $row[3],
-                    'chance' => $row[4]
+                    'chance' => $row[4],
+                    'battle_condition_id' => $row[5] === '' ? null : $row[5]
                 ]);
             }
         }

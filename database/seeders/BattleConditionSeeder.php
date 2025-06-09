@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\MoveEffectOHKO;
+use App\Models\BattleCondition;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class MoveEffectOHKOSeeder extends Seeder
+class BattleConditionSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/move_effect_ohkos.csv';
+    private string $csvPath = 'database/data/battle_conditions.csv';
 
     /**
      * Run the database seeds.
@@ -24,11 +24,9 @@ class MoveEffectOHKOSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                MoveEffectOHKO::create([
+                BattleCondition::create([
                     'id' => $row[0],
-                    'move_effect_id' => $row[1],
-                    'target_id' => $row[2],
-                    'battle_condition_id' => $row[3] === '' ? null : $row[3]
+                    'description' => $row[1]
                 ]);
             }
         }

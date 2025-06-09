@@ -28,7 +28,8 @@ class MoveEffectSwitchSeeder extends Seeder
                     'id' => $row[0],
                     'move_effect_id' => $row[1],
                     'switch_type_id' => $row[2],
-                    'target_id' => $row[3]
+                    'target_id' => $row[3],
+                    'battle_condition_id' => $row[4] === '' ? null : $row[4]
                 ]);
             }
         }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('move_effect_id')->constrained('move_effects');
             $table->foreignId('recoil_type_id')->constrained('recoil_types');
+            $table->foreignId('battle_condition_id')->nullable()->constrained('battle_conditions');
             $table->timestamps();
         });
     }

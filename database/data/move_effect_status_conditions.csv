@@ -1,5 +1,8 @@
-ID,"Move Effect ID","Status Condition ID","Target ID",Chance
-1,7,4,10,1000
-2,8,3,10,1000
-3,9,1,10,1000
-4,23,9,10,3000
+ID,"Move Effect ID","Status Condition ID","Target ID",Chance,"Battle Condition ID"
+1,7,4,10,1000,
+2,8,3,10,1000,
+3,9,1,10,1000,
+4,23,9,10,3000,
+5,27,9,10,3000,
+6,29,9,10,3000,
+7,34,1,10,3000,

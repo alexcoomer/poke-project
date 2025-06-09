@@ -27,7 +27,8 @@ class MoveEffectRecoilSeeder extends Seeder
                 MoveEffectRecoil::create([
                     'id' => $row[0],
                     'move_effect_id' => $row[1],
-                    'recoil_type_id' => $row[2]
+                    'recoil_type_id' => $row[2],
+                    'battle_condition_id' => $row[3] === '' ? null : $row[3]
                 ]);
             }
         }
