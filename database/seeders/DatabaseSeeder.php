@@ -79,6 +79,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MoveEffectPowerStaticModifierSeeder::class);
         $this->call(MoveEffectRecoilSeeder::class);
         $this->call(MoveEffectStatEffectSeeder::class);
+        $this->call(MoveEffectStaticDamageSeeder::class);
         $this->call(MoveEffectStatusConditionSeeder::class);
         $this->call(MoveEffectSwitchSeeder::class);
         $this->call(MoveEffectTrapSeeder::class);

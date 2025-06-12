@@ -1,2 +1,2 @@
-ID,"Move Effect ID","Move Forced Type ID"
-1,37,1
+ID,"Move Effect ID","Move Forced Type ID","Target ID","Battle Condition ID"
+1,37,1,7,

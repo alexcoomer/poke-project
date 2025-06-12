@@ -1,2 +1,2 @@
-ID,"Move Charge Effect ID","Battle Condition ID"
-1,1,
+ID,"Move Charge Effect ID","Target ID","Battle Condition ID"
+1,1,7,

@@ -27,7 +27,9 @@ class MoveEffectForcedMoveSeeder extends Seeder
                 MoveEffectForcedMove::create([
                     'id' => $row[0],
                     'move_effect_id' => $row[1],
-                    'move_force_typed_id' => $row[2]
+                    'move_force_typed_id' => $row[2],
+                    'target_id' => $row[3],
+                    'battle_condition_id' => $row[4] === '' ? null : $row[4]
                 ]);
             }
         }

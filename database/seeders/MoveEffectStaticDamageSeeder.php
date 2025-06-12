@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\MoveChargeEffectStatEffect;
+use App\Models\MoveEffectStaticDamage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
-class MoveChargeEffectStatEffectSeeder extends Seeder
+class MoveEffectStaticDamageSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/move_charge_effect_stat_effects.csv';
+    private string $csvPath = 'database/data/move_effect_static_damages.csv';
 
     /**
      * Run the database seeds.
@@ -24,10 +24,10 @@ class MoveChargeEffectStatEffectSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                MoveChargeEffectStatEffect::create([
+                MoveEffectStaticDamage::create([
                     'id' => $row[0],
-                    'move_charge_effect_id' => $row[1],
-                    'stat_effect_id' => $row[2],
+                    'move_effect_id' => $row[1],
+                    'static_damage_type_id' => $row[2],
                     'target_id' => $row[3],
                     'battle_condition_id' => $row[4] === '' ? null : $row[4]
                 ]);
