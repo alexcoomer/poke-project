@@ -52,6 +52,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GameGroupSeeder::class);
         $this->call(ItemCategorySeeder::class);
         $this->call(LocationSeeder::class);
+        $this->call(MoveForcedTypeSeeder::class);
         $this->call(NatureSeeder::class);
         $this->call(PowerScalingModifierSeeder::class);
         $this->call(StatEffectSeeder::class);
@@ -71,6 +72,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(MoveChargeEffectInvulnerabilitySeeder::class);
         $this->call(MoveChargeEffectStatEffectSeeder::class);
+        $this->call(MoveEffectForcedMoveSeeder::class);
         $this->call(MoveEffectGuaranteedHitSeeder::class);
         $this->call(MoveEffectOHKOSeeder::class);
         $this->call(MoveEffectPowerStaticModifierSeeder::class);

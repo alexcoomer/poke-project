@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('move_effect_traps', function (Blueprint $table) {
+        Schema::create('move_effect_forced_moves', function (Blueprint $table) {
             $table->id();
             $table->foreignId('move_effect_id')->constrained('move_effects');
-            $table->foreignId('trap_type_id')->constrained('trap_types');
-            $table->foreignId('target_id')->constrained('targets');
-            $table->foreignId('battle_condition_id')->nullable()->constrained('battle_conditions');
+            $table->foreignId('move_force_typed_id')->constrained('move_forced_types');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('move_effect_traps');
+        Schema::dropIfExists('move_effect_forced_moves');
     }
 };
