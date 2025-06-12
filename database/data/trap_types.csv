@@ -1,4 +1,4 @@
-ID,Name,"Min Turns","Max Turns","Percentage Damage Per Turn"
+ID,Name,"Min Turns","Max Turns","Static Damage Type ID"
 1,"Indefinite",,,
-2,"Standard Incremental Damage",4,5,1250
-3,"Weak Incremental Damage",4,5,625
+2,"Standard Incremental Damage",4,5,4
+3,"Weak Incremental Damage",4,5,3

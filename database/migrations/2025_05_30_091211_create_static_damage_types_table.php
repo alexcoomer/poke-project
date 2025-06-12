@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pokemon_growth_rates', function (Blueprint $table) {
+        Schema::create('static_damage_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->json('formula');
+            $table->enum('method', ['fixed_hp', 'percentage_hp', 'formula']);
+            $table->smallInteger('value')->nullable();
+            $table->json('formula')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pokemon_growth_rates');
+        Schema::dropIfExists('static_damage_types');
     }
 };

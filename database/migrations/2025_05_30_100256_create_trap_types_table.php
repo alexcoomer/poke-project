@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->smallInteger('min_turns')->nullable();
             $table->smallInteger('max_turns')->nullable();
-            $table->smallInteger('percentage_damage_per_turn')->nullable();
+            $table->foreignId('static_damage_type_id')->nullable()->constrained('static_damage_types');
             $table->timestamps();
         });
     }

@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\TrapType;
-use Illuminate\Database\Seeder;
+use App\Models\StaticDamageType;
 use Illuminate\Support\Facades\File;
+use Illuminate\Database\Seeder;
 
-class TrapTypeSeeder extends Seeder
+class StaticDamageTypeSeeder extends Seeder
 {
-    private string $csvPath = 'database/data/trap_types.csv';
+    private string $csvPath = 'database/data/static_damage_types.csv';
 
     /**
      * Run the database seeds.
@@ -24,12 +24,11 @@ class TrapTypeSeeder extends Seeder
             array_shift($csvData);
 
             foreach($csvData as $row) {
-                TrapType::create([
+                StaticDamageType::create([
                     'id' => $row[0],
-                    'name' => $row[1],
-                    'min_turns' => $row[2] === '' ? null : $row[2],
-                    'max_turns' => $row[3] === '' ? null : $row[3],
-                    'static_damage_type_id' => $row[4] === '' ? null : $row[4]
+                    'method' => $row[1],
+                    'value' => $row[2] === '' ? null : $row[2],
+                    'formula' => $row[3] === '' ? null : $row[3]
                 ]);
             }
         }

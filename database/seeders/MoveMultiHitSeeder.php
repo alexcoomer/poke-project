@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\MoveMultiHit;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Log;
 
 class MoveMultiHitSeeder extends Seeder
 {

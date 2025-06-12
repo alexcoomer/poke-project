@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RegionSeeder::class);
         $this->call(ScalingTypeSeeder::class);
         $this->call(StatTypeSeeder::class);
+        $this->call(StaticDamageTypeSeeder::class);
         $this->call(StatusConditionSeeder::class);
         $this->call(SwitchTypeSeeder::class);
         $this->call(TargetSeeder::class);

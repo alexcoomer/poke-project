@@ -1,0 +1,9 @@
+ID,Method,Value,Formula
+1,fixed_hp,20,
+2,fixed_hp,40,
+3,percentage_hp,625,
+4,percentage_hp,1250,
+5,percentage_hp,1667,
+6,percentage_hp,2500,
+7,percentage_hp,5000,
+8,formula,,"{""expression"": ""user.level"", ""description"": ""Damage equal to the user's level""}"
