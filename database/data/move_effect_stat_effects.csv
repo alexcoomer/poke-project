@@ -4,3 +4,4 @@ ID,"Move Effect ID","Stat Effect ID","Target ID",Chance,"Battle Condition ID"
 3,39,18,10,10000,
 4,43,18,10,10000,
 5,45,6,10,10000,
+6,51,42,11,1000,

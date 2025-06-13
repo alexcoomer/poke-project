@@ -11,3 +11,6 @@ ID,"Move Effect ID","Status Condition ID","Target ID",Chance,"Battle Condition I
 10,44,9,10,3000,
 11,47,2,10,10000,
 12,48,7,10,10000,
+13,50,13,10,10000,
+14,52,4,10,1000,
+15,53,4,10,1000,

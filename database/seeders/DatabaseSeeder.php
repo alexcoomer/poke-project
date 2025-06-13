@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DamageClassSeeder::class);
         $this->call(EggGroupSeeder::class);
         $this->call(EvolutionTriggerSeeder::class);
+        $this->call(FieldEffectSeeder::class);
         $this->call(GenderSeeder::class);
         $this->call(GenerationSeeder::class);
         $this->call(ItemFlagSeeder::class);
